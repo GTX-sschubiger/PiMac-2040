@@ -5,7 +5,7 @@
          * to a magic address.
          *
          * The original code:   Basilisk II (C) Christian Bauer
-         * Extensions:          Copyright 2024 Matt Evans
+         * Extensions:          Copyright 2024 SCHUBIGER.CL (https://schubiger.cl)
          *
          * GPLv2
          */

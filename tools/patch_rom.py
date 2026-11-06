@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-patch_rom.py - Patch Macintosh Plus v3 ROM for umac / pico-mac on RP2040.
+patch_rom.py - Patch Macintosh Plus v3 ROM for umac / PiMac 2040 on RP2040.
 
 Applies:
 1. Checksum bypass patch

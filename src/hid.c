@@ -1,7 +1,7 @@
 /*
  * Derived from pico-examples/usb/host/host_cdc_msc_hid/hid_app.c, which is
  * Copyright (c) 2021, Ha Thach (tinyusb.org)
- * Further changes are Copyright 2024 Matt Evans
+ * Further changes are Copyright 2024-2026 SCHUBIGER.CL (https://schubiger.cl)
  *
  * The MIT License (MIT)
  *

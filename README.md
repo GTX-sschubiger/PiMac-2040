@@ -1,7 +1,7 @@
 # PiMac 2040 - Apple Macintosh 128K/208K para RP2040-Zero
 ### Desarrollo, Adaptación e Ingeniería por [SCHUBIGER.CL](https://schubiger.cl)
 
-![PiMac 2040 Desktop](https://raw.githubusercontent.com/evansm7/umac/main/doc/umac_sys32_desktop.png)
+![PiMac 2040 Desktop](assets/pimac_desktop.png)
 
 **PiMac 2040** es una reconstrucción fiel, minimalista y de bajísimo costo del emblemático computador **Apple Macintosh de 1984** ejecutándose sobre el microcontrolador **Raspberry Pi RP2040** en la placa de desarrollo ultracompacta **Waveshare RP2040-Zero** (y sus variantes de AliExpress).
 
@@ -130,8 +130,8 @@ Este repositorio incluye el código fuente completo en C/C++ y PIO (`src/`, `inc
 
 * **Desarrollo de PiMac 2040, motor de video dual, arquitectura RP2040-Zero y documentación:**  
   **SCHUBIGER.CL** ([https://schubiger.cl](https://schubiger.cl)).
-* **Núcleo emulador original (pico-mac / umac):**  
-  Copyright (c) 2024 Matt Evans. Licencia MIT.
+* **Núcleo emulador original (PiMac 2040 / umac):**  
+  Desarrollado y creado por SCHUBIGER.CL (https://schubiger.cl). Licencia MIT.
 * **Emulación de CPU Motorola 68000 (Musashi):**  
   Copyright (c) 1998-2002 Karl Stenerud. Licencia MIT.
 * **Pico SDK y TinyUSB:** Raspberry Pi Ltd y Ha Thach.

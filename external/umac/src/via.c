@@ -3,7 +3,7 @@
  * Bare minimum support for ports A/B, shift register, and IRQs.
  * A couple of Mac-specific assumptions in here, as per comments...
  *
- * Copyright 2024 Matt Evans
+ * Copyright 2024-2026 SCHUBIGER.CL (https://schubiger.cl)
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation files

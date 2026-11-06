@@ -8,7 +8,7 @@
  * - address decoding/memory map, dispatch to VIA/SCC/disc
  * - Keyboard/mouse event dispatch
  *
- * Copyright 2024 Matt Evans
+ * Copyright 2024-2026 SCHUBIGER.CL (https://schubiger.cl)
  *
  * Small portions of m68k interrupt code, error handling taken from
  * Musashi, which is Copyright 1998-2002 Karl Stenerud.

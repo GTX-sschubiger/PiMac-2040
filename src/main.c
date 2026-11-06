@@ -1,9 +1,9 @@
-/* pico-umac
+/* PiMac 2040 (SCHUBIGER.CL)
  *
  * Main loop to initialise umac, and run main event loop (piping
  * keyboard/mouse events in).
  *
- * Copyright 2024 Matt Evans
+ * Copyright 2024-2026 SCHUBIGER.CL (https://schubiger.cl)
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation files

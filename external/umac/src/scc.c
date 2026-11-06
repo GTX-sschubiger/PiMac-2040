@@ -1,7 +1,7 @@
 /* SCC 85C30 model: just enough to model DCD interrupts.
  * God, I hate this chip, it's fugly AF.
  *
- * Copyright 2024 Matt Evans
+ * Copyright 2024-2026 SCHUBIGER.CL (https://schubiger.cl)
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation files

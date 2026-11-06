@@ -3,7 +3,7 @@
  * Contains a PV wrapper around a cut-down version of Basilisk II's
  * sony.cpp disc driver, with copyright/licence as shown inline below.
  *
- * Remaining (top) code is Copyright 2024 Matt Evans.
+ * Remaining (top) code is Copyright 2024-2026 SCHUBIGER.CL (https://schubiger.cl).
  *
  */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Matt Evans
+ * Copyright 2024-2026 SCHUBIGER.CL (https://schubiger.cl)
  *
  * Portions of the {READ,WRITE}_{BYTE,WORD,LONG} macros are from
  * Musashi, Copyright 1998-2002 Karl Stenerud.

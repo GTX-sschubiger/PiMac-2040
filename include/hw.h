@@ -1,5 +1,5 @@
 /*
- * pico-umac pin definitions
+ * PiMac 2040 (SCHUBIGER.CL) pin definitions
  * Tailored for RP2040-Zero (Waveshare / AliExpress mini RP2040)
  * and standard Raspberry Pi Pico.
  */

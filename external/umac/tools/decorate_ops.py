@@ -4,7 +4,7 @@
 # (hot) function names and in-place edit the m68kops.c to decorate
 # those function declarations with M68K_FAST_FUNC.
 #
-# Copyright 2024 Matt Evans
+# Copyright 2024-2026 SCHUBIGER.CL (https://schubiger.cl)
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
