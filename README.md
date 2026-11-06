@@ -126,11 +126,10 @@ Este repositorio incluye el código fuente completo en C/C++ y PIO (`src/`, `inc
 
 ---
 
-## 📜 Licencia Abierta y Atribución
+## 📜 Licencia y Uso del Proyecto
 
-Este proyecto es de código abierto y hardware libre, distribuido bajo los términos de la **Licencia MIT**:
+Este proyecto se comparte de manera abierta con la comunidad bajo la **Licencia MIT**.
 
-* ✅ **Libertad Total:** Puedes usar, estudiar, modificar, manipular, ampliar, compilar y redistribuir este proyecto libremente para fines personales, educativos o comerciales.
-* ⚠️ **Condición de Atribución Obligatoria:** Cualquier copia, versión derivada o modificación de este software o hardware debe **mantener el aviso de copyright y citar el origen y desarrollo original de [SCHUBIGER.CL](https://schubiger.cl)**.
+Eres bienvenido a explorar, utilizar, modificar y adaptar libremente tanto el software como el diseño de hardware para tus propios proyectos, estudios o desarrollos personales y comerciales. Si decides construir sobre este trabajo o compartirlo con otros, te agradecemos incluir una referencia o mención al desarrollo original de [SCHUBIGER.CL](https://schubiger.cl).
 
-Para conocer los términos legales exactos, consulta el archivo [LICENSE](LICENSE).
+Para más detalles sobre los términos generales de la licencia, puedes consultar el archivo [LICENSE](LICENSE).
