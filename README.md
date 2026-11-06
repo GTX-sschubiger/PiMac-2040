@@ -16,8 +16,8 @@ Este proyecto incorpora un **motor de video dual inteligente** (Video Compuesto 
 ## 🚀 Características Principales
 
 * **Motor de Video Dual Seleccionable (Compuesto y VGA):**
-  * **Video Compuesto (CVBS / RCA):** Modo entrelazado 480i NTSC a $15,734\text{ Hz}$ con DAC pasivo de 2 resistencias. Imagen centrada de $512 \times 342$ píxeles para televisores CRT de tubo.
-  * **Salida VGA (DB-15):** Modo estándar $640 \times 480$ a $60\text{ Hz}$ ($31,468\text{ Hz}$) para monitores de computadora LCD o CRT.
+  * **Video Compuesto (CVBS / RCA):** Modo entrelazado 480i NTSC a 15.734 Hz con DAC pasivo de 2 resistencias. Imagen centrada de $512 \times 342$ píxeles para televisores CRT de tubo.
+  * **Salida VGA (DB-15):** Modo estándar $640 \times 480$ a $60\text{ Hz}$ (31.468 Hz) para monitores de computadora LCD o CRT.
   * **Conmutación por Jumper (GP0):** Sin jumper arranca en Compuesto; con jumper a GND arranca en VGA. Ambos conectores pueden estar permanentemente soldados en el mismo aparato.
 * **Memoria Expandida a 208 KB ("Mac 208K"):** Aprovecha al máximo la memoria SRAM del RP2040, permitiendo abrir y trabajar sin errores de memoria en **MacPaint 1.5** y **MacWrite 4.5**.
 * **Almacenamiento en Tarjeta MicroSD (FAT32):** Lee y escribe permanentemente imágenes de disco (`umac0.img`) a través del bus SPI. Puedes guardar documentos, dibujos y estados de juegos.
@@ -63,12 +63,12 @@ Este proyecto incorpora un **motor de video dual inteligente** (Video Compuesto 
 ## 📐 Conexiones Rápidas de Video
 
 ### 1. Salida de Video Compuesto (RCA Amarillo para TV CRT)
-* **GP8 (Sync):** Resistencia de **$560\ \Omega$** (o $470\ \Omega$) conectada al pin central del RCA.
-* **GP9 (Data):** Resistencia de **$270\ \Omega$** (o $240\ \Omega$) conectada al pin central del RCA.
+* **GP8 (Sync):** Resistencia de **560 Ω** (o 470 Ω) conectada al pin central del RCA.
+* **GP9 (Data):** Resistencia de **270 Ω** (o 240 Ω) conectada al pin central del RCA.
 * **GND:** Conectado directamente a la malla exterior del conector RCA.
 
 ### 2. Salida VGA (Conector DB-15 Hembra)
-* **GP26 (Video):** Resistencia de **$100\ \Omega$ a $120\ \Omega$** conectada a los pines **1, 2 y 3** (Rojo, Verde y Azul unidos).
+* **GP26 (Video):** Resistencia de **100 Ω a 120 Ω** conectada a los pines **1, 2 y 3** (Rojo, Verde y Azul unidos).
 * **GP27 (VSync):** Conectado directamente al pin **14** del VGA.
 * **GP29 (HSync):** Conectado directamente al pin **13** del VGA.
 * **GND:** Conectado a los pines **5, 6, 7, 8 y 10** del VGA.

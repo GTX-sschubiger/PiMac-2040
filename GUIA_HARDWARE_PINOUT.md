@@ -37,12 +37,12 @@ La placa **RP2040-Zero** expone 20 pines exteriores almenados (*castellated pads
 | Pin RP2040-Zero | Función en PiMac 2040 | Componentes Requeridos | Conexión Destino |
 | :--- | :--- | :--- | :--- |
 | **GP0** | **Selector de Modo de Video** | Jumper o Switch a GND | • **Abierto (Sin Jumper):** Video Compuesto (TV CRT)<br>• **Cerrado a GND:** Salida VGA (Monitor PC) |
-| **GP8** | **Sync Compuesto (CVBS)** | Resistencia **$560\ \Omega$** (1/4 W) | Pin central de conector RCA hembra |
-| **GP9** | **Data Compuesto (CVBS)** | Resistencia **$270\ \Omega$** (1/4 W) | Pin central de conector RCA hembra |
+| **GP8** | **Sync Compuesto (CVBS)** | Resistencia **560 Ω** (1/4 W) | Pin central de conector RCA hembra |
+| **GP9** | **Data Compuesto (CVBS)** | Resistencia **270 Ω** (1/4 W) | Pin central de conector RCA hembra |
 | **GND** | **Malla Blindaje RCA** | Cable directo | Malla exterior del conector RCA |
-| **GP26** | **Video Monocromo VGA** | Resistencia **$100\ \Omega$ a $120\ \Omega$** | Pines 1, 2 y 3 (Rojo, Verde y Azul unidos) de VGA DB-15 |
-| **GP27** | **Sincronismo Vertical VGA** | Conexión directa (o $100\ \Omega$) | Pin 14 (VSync) del conector VGA DB-15 |
-| **GP29** | **Sincronismo Horizontal VGA**| Conexión directa (o $100\ \Omega$) | Pin 13 (HSync) del conector VGA DB-15 |
+| **GP26** | **Video Monocromo VGA** | Resistencia **100 Ω a 120 Ω** | Pines 1, 2 y 3 (Rojo, Verde y Azul unidos) de VGA DB-15 |
+| **GP27** | **Sincronismo Vertical VGA** | Conexión directa (o 100 Ω) | Pin 14 (VSync) del conector VGA DB-15 |
+| **GP29** | **Sincronismo Horizontal VGA**| Conexión directa (o 100 Ω) | Pin 13 (HSync) del conector VGA DB-15 |
 | **GND** | **Masa / Tierra VGA** | Cable directo | Pines 5, 6, 7, 8 y 10 del conector VGA DB-15 |
 | **GP2** | **MicroSD SPI SCK (Reloj)** | Cable directo | Pin 5 (CLK) del adaptador MicroSD |
 | **GP3** | **MicroSD SPI TX (MOSI)** | Cable directo | Pin 2 (CMD) del adaptador MicroSD |
@@ -50,10 +50,10 @@ La placa **RP2040-Zero** expone 20 pines exteriores almenados (*castellated pads
 | **GP5** | **MicroSD SPI CS (Chip Select)**| Cable directo | Pin 1 (CD/DAT3) del adaptador MicroSD |
 | **3V3** | **Alimentación MicroSD** | Cable directo | Pin 4 (VDD) del adaptador MicroSD *(¡NUNCA 5V!)* |
 | **GND** | **Masa MicroSD** | Cable directo | Pines 3 y 6 (VSS) del adaptador MicroSD |
-| **GP10** | **USB Host 1 D+ (Teclado)** | Resistencia **$27\ \Omega$** + **$15\text{k}\Omega$** a GND | Pin 3 (D+) de conector USB-A hembra 1 |
-| **GP11** | **USB Host 1 D- (Teclado)** | Resistencia **$27\ \Omega$** + **$15\text{k}\Omega$** a GND | Pin 2 (D-) de conector USB-A hembra 1 |
-| **GP12** | **USB Host 2 D+ (Mouse)** | Resistencia **$27\ \Omega$** + **$15\text{k}\Omega$** a GND | Pin 3 (D+) de conector USB-A hembra 2 |
-| **GP13** | **USB Host 2 D- (Mouse)** | Resistencia **$27\ \Omega$** + **$15\text{k}\Omega$** a GND | Pin 2 (D-) de conector USB-A hembra 2 |
+| **GP10** | **USB Host 1 D+ (Teclado)** | Resistencia **27 Ω** + **15 kΩ** a GND | Pin 3 (D+) de conector USB-A hembra 1 |
+| **GP11** | **USB Host 1 D- (Teclado)** | Resistencia **27 Ω** + **15 kΩ** a GND | Pin 2 (D-) de conector USB-A hembra 1 |
+| **GP12** | **USB Host 2 D+ (Mouse)** | Resistencia **27 Ω** + **15 kΩ** a GND | Pin 3 (D+) de conector USB-A hembra 2 |
+| **GP13** | **USB Host 2 D- (Mouse)** | Resistencia **27 Ω** + **15 kΩ** a GND | Pin 2 (D-) de conector USB-A hembra 2 |
 | **5V (VBUS)** | **Alimentación USBs** | Cable directo | Pin 1 (+5V) de ambos conectores USB-A hembra |
 | **GND** | **Masa USBs** | Cable directo | Pin 4 (GND) de ambos conectores USB-A hembra |
 | **GP16** | **LED de Estado RGB** | Interno en PCB | LED WS2812 de estado dinámico del sistema |
@@ -61,6 +61,8 @@ La placa **RP2040-Zero** expone 20 pines exteriores almenados (*castellated pads
 ---
 
 ## 📺 3. Conexión de Video Compuesto (TV Antiguo / Tubo CRT)
+
+![Esquema de Montaje Video Compuesto](assets/pimac2040_version1_composite.jpg)
 
 Genera señal analógica estándar NTSC monocromática en blanco y negro para cualquier televisor o monitor con entrada de video RCA amarillo:
 
@@ -78,6 +80,8 @@ Genera señal analógica estándar NTSC monocromática en blanco y negro para cu
 ---
 
 ## 🖥️ 4. Conexión de Salida VGA (Monitor de PC)
+
+![Esquema de Montaje Dual VGA y Compuesto](assets/pimac2040_version2_dual_vga_composite.jpg)
 
 Para conectar a monitores de computadora CRT o pantallas planas con entrada VGA DB-15:
 
@@ -97,8 +101,8 @@ Para conectar a monitores de computadora CRT o pantallas planas con entrada VGA 
 ```
 
 ### 🔘 Selección Automática de Modo de Video (Jumper en GP0):
-* **Sin jumper en GP0 (Pin 1 libre al aire):** El microcontrolador activa su resistencia interna de pull-up ($3.3\text{V}$) y arranca en **Modo Video Compuesto (TV CRT 480i NTSC)**.
-* **Con jumper entre GP0 y GND (Pin 1 a Pin 19):** Al detectar $0\text{V}$, el microcontrolador conmuta automáticamente e inicializa el motor **VGA (640x480 @ 60Hz)**.
+* **Sin jumper en GP0 (Pin 1 libre al aire):** El microcontrolador activa su resistencia interna de pull-up (3.3V) y arranca en **Modo Video Compuesto (TV CRT 480i NTSC)**.
+* **Con jumper entre GP0 y GND (Pin 1 a Pin 19):** Al detectar 0V, el microcontrolador conmuta automáticamente e inicializa el motor **VGA (640x480 @ 60Hz)**.
 
 ---
 

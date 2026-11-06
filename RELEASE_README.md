@@ -53,7 +53,7 @@ El firmware de PiMac 2040 incorpora un **motor de video inteligente** que soport
 | Selección de pantalla          | Automática                      | Con Switch o Jumper (GP0)    |
 | MicroSD (Lectura y Escritura)  | SÍ                              | SÍ                           |
 | Puertos USB (Teclado y Ratón)  | SÍ                              | SÍ                           |
-| Costo total de componentes     | Ultrabajo (~$4 a $6 USD)        | Muy económico (~$6 a $8 USD) |
+| Costo total de componentes     | Ultrabajo (~4 a 6 USD)        | Muy económico (~6 a 8 USD) |
 +--------------------------------+---------------------------------+------------------------------+
 ```
 
@@ -61,10 +61,13 @@ El firmware de PiMac 2040 incorpora un **motor de video inteligente** que soport
 
 ## 📺 VERSIÓN 1: Versión Simple / Económica (Solo Video Compuesto)
 
+![Montaje Real PiMac 2040 - Versión 1 Video Compuesto](assets/pimac2040_version1_composite.jpg)
+*Montaje real de la Versión 1: Conexión de Video Compuesto RCA con divisor resistivo de 560 Ω y 270 Ω, adaptador MicroSD SPI y puertos USB.*
+
 ### ¿Cómo funciona?
 Esta versión está pensada para conectar el PiMac 2040 directamente a cualquier televisor retro de tubo (CRT), televisor moderno con entrada amarilla de video (AV / RCA), o monitor de seguridad analógico.
 
-El microcontrolador RP2040 genera de forma nativa la señal de video analógica en blanco y negro estándar **NTSC 480i**. Mediante dos resistencias corrientes conectadas a los pines GP8 y GP9, se mezclan digitalmente las señales de sincronismo y los píxeles de video para entregar la señal exacta de $1.0\text{V}$ pico a pico con impedancia de $75\ \Omega$ que necesita cualquier televisor.
+El microcontrolador RP2040 genera de forma nativa la señal de video analógica en blanco y negro estándar **NTSC 480i**. Mediante dos resistencias corrientes conectadas a los pines GP8 y GP9, se mezclan digitalmente las señales de sincronismo y los píxeles de video para entregar la señal exacta de 1.0V pico a pico con impedancia de 75 Ω que necesita cualquier televisor.
 
 ### Diagrama de Conexión de Video Compuesto:
 ```text
@@ -87,15 +90,15 @@ El microcontrolador RP2040 genera de forma nativa la señal de video analógica 
 2. **Conector de Video:**
    * Nombre técnico: *Conector RCA hembra para chasis* (color amarillo, con tuerca de fijación) o *Jack RCA hembra para PCB*.
 3. **Resistencias de Video (2 unidades):**
-   * 1x *Resistencia de película metálica de $560\ \Omega$ (óhmios) a 1/4W (0.25W), tolerancia 5% o 1%* (Si no encuentras de $560\ \Omega$, sirve de $470\ \Omega$).
-   * 1x *Resistencia de película metálica de $270\ \Omega$ (óhmios) a 1/4W (0.25W), tolerancia 5% o 1%* (Si no encuentras de $270\ \Omega$, sirve de $240\ \Omega$).
+   * 1x *Resistencia de película metálica de 560 Ω (óhmios) a 1/4W (0.25W), tolerancia 5% o 1%* (Si no encuentras de 560 Ω, sirve de 470 Ω).
+   * 1x *Resistencia de película metálica de 270 Ω (óhmios) a 1/4W (0.25W), tolerancia 5% o 1%* (Si no encuentras de 270 Ω, sirve de 240 Ω).
 4. **Ranura de Tarjeta MicroSD:**
    * Opción A (Ultra económica): *Adaptador pasivo MicroSD a SD estándar* (se sueldan 6 cables directos a sus pistas doradas traseras).
    * Opción B: *Módulo lector MicroSD SPI para microcontrolador a 3.3V*.
 5. **Conectores USB para Teclado y Ratón (2 unidades):**
    * 2x *Conectores USB-A hembra estándar para circuito impreso (tipo DIP 90° o para chasis)*.
-   * 4x *Resistencias de película de $27\ \Omega$ a 1/4W* (amortiguación de líneas D+ y D-).
-   * 4x *Resistencias de película de $15\text{k}\Omega$ a 1/4W* (polarización pull-down para modo Host).
+   * 4x *Resistencias de película de 27 Ω a 1/4W* (amortiguación de líneas D+ y D-).
+   * 4x *Resistencias de película de 15 kΩ a 1/4W* (polarización pull-down para modo Host).
 6. **Alimentación:**
    * 1x *Cable USB-C estándar* conectado a cualquier cargador de teléfono móvil de 5V (1A o 2A).
 
@@ -103,12 +106,15 @@ El microcontrolador RP2040 genera de forma nativa la señal de video analógica 
 
 ## 🖥️ VERSIÓN 2: Versión Completa Dual (Video Compuesto + Monitor VGA)
 
+![Montaje Real PiMac 2040 - Versión 2 Dual VGA y Compuesto](assets/pimac2040_version2_dual_vga_composite.jpg)
+*Montaje real de la Versión 2: Conexión dual completa con conector VGA DE-15 (DB-15), conector RCA, selector de modo y periféricos.*
+
 ### ¿Cómo funciona el Motor Dual Inteligente?
 Esta versión incluye tanto el puerto RCA como un conector VGA estándar de 15 pines. Te permite utilizar el PiMac 2040 en un televisor retro de living o llevarlo a tu escritorio y conectarlo a un monitor de computadora CRT o pantalla LCD/LED con entrada VGA a **640x480 @ 60Hz**.
 
 El firmware lee el estado del pin **GP0** en cada arranque:
-* **Sin Jumper en GP0 (Pin libre al aire / Switch apagado):** El sistema activa la resistencia interna de *pull-up* del RP2040 ($3.3\text{V}$) y genera la señal de **Video Compuesto (TV CRT)** por GP8 y GP9.
-* **Con Jumper en GP0 a GND (Pin conectado a masa / Switch encendido):** El sistema detecta $0\text{V}$ y conmuta automáticamente los generadores PIO para emitir **Video VGA con sincronismos HSync y VSync** por los pines GP26, GP27 y GP29.
+* **Sin Jumper en GP0 (Pin libre al aire / Switch apagado):** El sistema activa la resistencia interna de *pull-up* del RP2040 (3.3V) y genera la señal de **Video Compuesto (TV CRT)** por GP8 y GP9.
+* **Con Jumper en GP0 a GND (Pin conectado a masa / Switch encendido):** El sistema detecta 0V y conmuta automáticamente los generadores PIO para emitir **Video VGA con sincronismos HSync y VSync** por los pines GP26, GP27 y GP29.
 
 ### Diagrama de Conexiones Dual (VGA + Compuesto):
 
@@ -145,8 +151,8 @@ El firmware lee el estado del pin **GP0** en cada arranque:
 1. **Conector VGA:**
    * Nombre técnico: *Conector D-Sub DE-15 hembra de 15 pines en 3 filas* (comúnmente vendido como *Conector VGA DB15 hembra para chasis con postes roscados* o *Conector VGA hembra para circuito impreso*).
 2. **Resistencia para VGA:**
-   * 1x *Resistencia de película metálica de $100\ \Omega$ o $120\ \Omega$ a 1/4W (0.25W), 1% o 5%* (adapta el nivel de voltaje de 3.3V a los 0.7V estándar de video analógico VGA).
-   * (Opcional recomendado) 2x *Resistencias de $100\ \Omega$ a 1/4W* colocadas en serie en las líneas GP27 y GP29 para proteger los sincronismos contra sobrecorriente.
+   * 1x *Resistencia de película metálica de 100 Ω o 120 Ω a 1/4W (0.25W), 1% o 5%* (adapta el nivel de voltaje de 3.3V a los 0.7V estándar de video analógico VGA).
+   * (Opcional recomendado) 2x *Resistencias de 100 Ω a 1/4W* colocadas en serie en las líneas GP27 y GP29 para proteger los sincronismos contra sobrecorriente.
 3. **Interruptor o Selector de Modo:**
    * Nombre técnico: *Interruptor deslizante miniatura SPDT (1 polo, 2 posiciones)* O *Cabezal de pines macho 1x2 (paso 2.54 mm) con Jumper Shunt extraíble*.
 
