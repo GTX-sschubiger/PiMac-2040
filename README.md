@@ -126,12 +126,11 @@ Este repositorio incluye el código fuente completo en C/C++ y PIO (`src/`, `inc
 
 ---
 
-## 📜 Licencia y Créditos
+## 📜 Licencia Abierta y Atribución
 
-* **Desarrollo de PiMac 2040, motor de video dual, arquitectura RP2040-Zero y documentación:**  
-  **SCHUBIGER.CL** ([https://schubiger.cl](https://schubiger.cl)).
-* **Núcleo emulador original (PiMac 2040 / umac):**  
-  Desarrollado y creado por SCHUBIGER.CL (https://schubiger.cl). Licencia MIT.
-* **Emulación de CPU Motorola 68000 (Musashi):**  
-  Copyright (c) 1998-2002 Karl Stenerud. Licencia MIT.
-* **Pico SDK y TinyUSB:** Raspberry Pi Ltd y Ha Thach.
+Este proyecto es de código abierto y hardware libre, distribuido bajo los términos de la **Licencia MIT**:
+
+* ✅ **Libertad Total:** Puedes usar, estudiar, modificar, manipular, ampliar, compilar y redistribuir este proyecto libremente para fines personales, educativos o comerciales.
+* ⚠️ **Condición de Atribución Obligatoria:** Cualquier copia, versión derivada o modificación de este software o hardware debe **mantener el aviso de copyright y citar el origen y desarrollo original de [SCHUBIGER.CL](https://schubiger.cl)**.
+
+Para conocer los términos legales exactos, consulta el archivo [LICENSE](LICENSE).
