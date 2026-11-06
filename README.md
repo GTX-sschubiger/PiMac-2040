@@ -3,6 +3,10 @@
 
 ![PiMac 2040 Desktop](assets/pimac_desktop.png)
 
+> [!TIP]
+> **¿Quieres armarlo y probarlo en 5 minutos?**
+> Consulta la [**Guía Rápida de Instalación y Conexiones para el Release (RELEASE_README.md)**](RELEASE_README.md), con el paso a paso ultra simple para flashear el RP2040, preparar la MicroSD y elegir entre la **Versión 1 (Solo Video Compuesto)** o la **Versión 2 (Compuesto + VGA Dual)** con la lista de componentes técnicos para comprar.
+
 **PiMac 2040** es una reconstrucción fiel, minimalista y de bajísimo costo del emblemático computador **Apple Macintosh de 1984** ejecutándose sobre el microcontrolador **Raspberry Pi RP2040** en la placa de desarrollo ultracompacta **Waveshare RP2040-Zero** (y sus variantes de AliExpress).
 
 Este proyecto incorpora un **motor de video dual inteligente** (Video Compuesto analógico para televisores antiguos CRT y salida VGA para monitores de PC), expansión de memoria a **208 KB de RAM**, soporte de almacenamiento en tarjeta **MicroSD** mediante un adaptador pasivo soldado directo, retroalimentación visual mediante el **LED RGB WS2812** integrado y conectividad **USB Host**.
