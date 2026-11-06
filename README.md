@@ -89,6 +89,7 @@ En la carpeta [`disks/`](disks/) encontrarás una variedad completa de imágenes
 
 | Imagen | Tamaño | SO | Contenido y Aplicaciones Destacadas |
 | :--- | :---: | :---: | :--- |
+| **`umac0_oficina_almacenamiento_20mb.img`** | **20 MB** | System 3.2 | **Productividad y Almacenamiento:** Microsoft Word 4.0a, Microsoft Excel 2.2a, Microsoft Works 3.0, Aldus PageMaker 2.0a, MacPaint 2.0, MacDraw 1.9, TeachText, BBEdit Lite, utilitarios y carpeta **📁 Mis Documentos** con más de 10 MB libres para tus archivos. |
 | **`umac0_master_10mb.img`** | 10 MB | System 3.2 | **Todo-en-Uno:** Dark Castle, Beyond Dark Castle, Stunt Copter, Shufflepuck Café, Risk, Cannon Fodder, Tetris DA, MacPaint, MacDraw, TeachText, Disk Copy, Utilitarios. |
 | **`umac0.img`** | 10 MB | System 3.2 | **Clásico Original:** MacPaint 1.3, MacWrite 4.5, MacDraw, Lode Runner, Aliens, Billiard Parlour, Mouse Eaters, DaliClock, Planetfall, MacLanding, Enigma. |
 | **`umac0_games_pack.img`** | 4 MB | System 3.2 | **Arcade Pack:** Dark Castle v1.2, Beyond Dark Castle, Stunt Copter, Shufflepuck Café, Risk, Cannon Fodder, Tetris DA. |
