@@ -86,21 +86,21 @@ El microcontrolador RP2040 genera de forma nativa la señal de video analógica 
 
 ### Lista de Componentes para Comprar (Nombres Técnicos Exactos):
 1. **Placa Microcontroladora:**
-   * Nombre técnico: *Módulo de desarrollo Waveshare RP2040-Zero* (con conector USB-C y chip Raspberry Pi RP2040).
+   * Nombre técnico: *Módulo RP2040-Zero (Tenstar Robot / Waveshare o genérico chino)*. Es la placa con RP2040 más compacta y económica del mercado (~18 x 23.5 mm, PCB morada/azul con puerto USB-C y pads almenados dorados).
 2. **Conector de Video:**
    * Nombre técnico: *Conector RCA hembra para chasis* (color amarillo, con tuerca de fijación) o *Jack RCA hembra para PCB*.
 3. **Resistencias de Video (2 unidades):**
    * 1x *Resistencia de película metálica de 560 Ω (óhmios) a 1/4W (0.25W), tolerancia 5% o 1%* (Si no encuentras de 560 Ω, sirve de 470 Ω).
    * 1x *Resistencia de película metálica de 270 Ω (óhmios) a 1/4W (0.25W), tolerancia 5% o 1%* (Si no encuentras de 270 Ω, sirve de 240 Ω).
-4. **Ranura de Tarjeta MicroSD:**
-   * Opción A (Ultra económica): *Adaptador pasivo MicroSD a SD estándar* (se sueldan 6 cables directos a sus pistas doradas traseras).
-   * Opción B: *Módulo lector MicroSD SPI para microcontrolador a 3.3V*.
-5. **Conectores USB para Teclado y Ratón (2 unidades):**
-   * 2x *Conectores USB-A hembra estándar para circuito impreso (tipo DIP 90° o para chasis)*.
-   * 4x *Resistencias de película de 27 Ω a 1/4W* (amortiguación de líneas D+ y D-).
-   * 4x *Resistencias de película de 15 kΩ a 1/4W* (polarización pull-down para modo Host).
-6. **Alimentación:**
-   * 1x *Cable USB-C estándar* conectado a cualquier cargador de teléfono móvil de 5V (1A o 2A).
+4. **Ranura de Tarjeta MicroSD (DIY Directo):**
+   * Opción A (Recomendada y sin costo extra): *Adaptador pasivo plástico de MicroSD a SD* (el adaptador negro que viene incluido gratis en los paquetes de tarjetas MicroSD). Se raspa ligeramente el barniz y se sueldan 6 cables finos directamente a sus pistas doradas traseras, conectándolos a la placa RP2040-Zero sin gastar en módulos adicionales.
+   * Opción B: *Módulo lector MicroSD SPI de 3.3V* comercial.
+5. **Puertos USB para Teclado y Ratón (Dos métodos a elección):**
+   * **Método 1 (Puertos físicos reciclados o sueltos):** 2x *Conectores USB-A hembra* (pueden ser reciclados o desoldados de placas madre/cables viejos, o comprados sueltos tipo DIP/chasis) + 4 resistencias de 27 Ω y 4 resistencias de 15 kΩ conectadas a los pines GP10, GP11, GP12 y GP13.
+   * **Método 2 (Adaptador OTG directo por USB-C):** Puedes conectar un *adaptador USB-C a USB-A OTG* miniatura directamente al puerto USB-C de la placa RP2040-Zero junto con un mini-hub USB pasivo, ahorrándote soldar resistencias USB.
+6. **Opciones de Alimentación Eléctrica:**
+   * **Por cable USB-C:** Conectando a cualquier cargador de celular estándar de 5V (1A o 2A).
+   * **Alimentación directa por pines (Batería o Fuente 5V):** Puedes soldar cables directamente a los pines **5V (Pin 20 - VBUS)** y **GND (Pin 19)** de la RP2040-Zero para alimentar todo el proyecto con una batería de litio 18650 usando un módulo elevador booster TP4056 a 5V.
 
 ---
 
