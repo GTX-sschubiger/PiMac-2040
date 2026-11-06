@@ -1,0 +1,115 @@
+; PIO Composite Video output for RP2040
+; Generates standard baseband Monochrome Composite Video (CVBS) for NTSC/PAL CRT/monitors.
+;
+; Timing: 20 MHz PIO clock (clkdiv = 12.5 from 250 MHz system clock).
+; 1 PIO cycle = 50 ns, 2 PIO cycles = 100 ns = 1 pixel / timing unit.
+;
+; Outputs:
+; - SIDESET pin: Composite SYNC (0 = Sync pulse at 0.0V, 1 = Blanking/Video level at 3.3V)
+; - OUT/SET pin: Composite DATA (0 = Black/Blanking at 0.0V, 1 = White pixel at 3.3V)
+;
+; External 2-resistor DAC:
+; - SYNC pin -> 470R to 560R resistor -> RCA center pin
+; - DATA pin -> 240R to 270R resistor -> RCA center pin
+; - GND      -> RCA outer shield (Ground)
+;
+; Resulting output levels into standard 75 Ohm TV termination:
+; - Sync tip (SYNC=0, DATA=0):  0.0 V  (0 IRE)
+; - Blank/Black (SYNC=1, DATA=0): 0.3 V  (40 IRE)
+; - Peak White (SYNC=1, DATA=1): 1.0 V  (100 IRE)
+
+.program pio_composite
+.side_set 1
+
+frame_start:
+; Word 0: [31] = vsync_flag; [30:23] = HSW; [22:15] = HBP; [14:7] = HFP
+    out     X, 1            side 1      ; Read vsync flag
+    jmp     !X, normal_line side 1
+
+vsync_line:
+; Broad vertical sync pulse line:
+; Notch (4.7 us): SYNC = 1 (side 1, 0.3V blanking notch)
+    out     X, 8            side 1
+vs_notch:
+    nop                     side 1
+    jmp     X-- vs_notch    side 1
+
+; Broad sync pulse (58.9 us): SYNC = 0 (side 0, 0.0V sync tip)
+    out     X, 8            side 0
+vs_hbp:
+    nop                     side 0
+    jmp     X-- vs_hbp      side 0
+
+    out     Y, 8            side 0
+    pull    block           side 0      ; Pull Word 1 (pixel count)
+    out     X, 32           side 0
+vs_pixels:
+    out     null, 1         side 0      ; Discard pixels while holding SYNC=0
+    jmp     X-- vs_pixels   side 0
+
+    set     pins, 0         side 0      ; Ensure DATA is 0
+vs_hfp:
+    nop                     side 0
+    jmp     Y-- vs_hfp      side 0
+    jmp     frame_start     side 1
+
+normal_line:
+; Normal active video or blanking scanline:
+; HSW (4.7 us): SYNC = 0 (side 0, 0.0V sync tip)
+    out     X, 8            side 0
+norm_hsw:
+    nop                     side 0
+    jmp     X-- norm_hsw    side 0
+
+; HBP (5.4 us): SYNC = 1 (side 1, 0.3V blanking level)
+    out     X, 8            side 1
+norm_hbp:
+    nop                     side 1
+    jmp     X-- norm_hbp    side 1
+
+    out     Y, 8            side 1
+    pull    block           side 1      ; Pull Word 1: pixel count (511)
+    out     X, 32           side 1
+
+norm_pixels:
+    out     pins, 1         side 1      ; Shift 1 bit from Mac FB to DATA pin!
+    jmp     X-- norm_pixels side 1
+
+    set     pins, 0         side 1      ; Reset DATA to 0 (black/blanking)
+norm_hfp:
+    nop                     side 1
+    jmp     Y-- norm_hfp    side 1
+    jmp     frame_start     side 1
+
+% c-sdk {
+#include "hardware/clocks.h"
+
+static inline void pio_composite_program_init(PIO pio, uint sm, uint offset,
+                                              uint sync_pin, uint data_pin,
+                                              float clk_div) {
+    pio_gpio_init(pio, sync_pin);
+    pio_gpio_init(pio, data_pin);
+
+    pio_sm_set_consecutive_pindirs(pio, sm, sync_pin, 1, true);
+    pio_sm_set_consecutive_pindirs(pio, sm, data_pin, 1, true);
+
+    pio_sm_config c = pio_composite_program_get_default_config(offset);
+
+    // SIDESET controls SYNC pin
+    sm_config_set_sideset_pins(&c, sync_pin);
+    // OUT controls DATA pin (1 bit per pixel)
+    sm_config_set_out_pins(&c, data_pin, 1);
+    // SET controls DATA pin (to clear to 0)
+    sm_config_set_set_pins(&c, data_pin, 1);
+
+    // Autopull 32-bit words, shift out MSB first (Macintosh bit order)
+    sm_config_set_out_shift(&c, false, true, 32);
+
+    // Join FIFOs for TX
+    sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_TX);
+
+    pio_sm_init(pio, sm, offset, &c);
+    pio_sm_set_clkdiv(pio, sm, clk_div);
+    pio_sm_set_enabled(pio, sm, true);
+}
+%}

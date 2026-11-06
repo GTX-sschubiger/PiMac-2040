@@ -1,0 +1,27 @@
+# Build artifacts
+build/
+*.obj
+*.o
+*.elf
+*.dis
+*.map
+*.hex
+*.exe
+*.zip
+VERSIONES/
+
+# Python artifacts
+__pycache__/
+*.pyc
+
+# Preserve releases, ROMs, disk images, and incbin headers
+!builds/
+!builds/*.uf2
+!github/release/*.uf2
+!disks/
+!disks/*.img
+!rom/
+!rom/*.ROM
+!rom/*.bin
+!incbin/
+!incbin/*.h
