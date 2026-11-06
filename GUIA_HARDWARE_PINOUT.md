@@ -7,28 +7,29 @@ Esta guía explica en detalle cómo conectar todos los periféricos a la placa *
 
 ## 🗺️ 1. Mapa Físico de Pines de la RP2040-Zero
 
-La placa **RP2040-Zero** expone 20 pines exteriores almenados (*castellated pads*). La distribución de señales ha sido optimizada para que los cables no se crucen y salgan agrupados por función:
+La placa **RP2040-Zero** (Tenstar Robot / Waveshare) expone pines laterales y pads inferiores. A continuación se muestra la correspondencia física exacta vista de frente con el conector USB-C arriba:
 
-```text
-                             +-------------------+
-                             |     [ USB-C ]     |
-                             |  (Host / Flashing)|
-   (JUMPER VGA) GP0  [Pin 1] [| 1              20 |] [Pin 20] 5V (VBUS)   ---> +5V USB / Alimentación Externa
-        (Libre) GP1  [Pin 2] [| 2              19 |] [Pin 19] GND         ---> Masa General (Tierra)
- (SD Clock) SCK GP2  [Pin 3] [| 3              18 |] [Pin 18] 3V3         ---> Pin 4 (VDD 3.3V) MicroSD (¡SOLO 3.3V!)
-  (SD MOSI) TX  GP3  [Pin 4] [| 4              17 |] [Pin 17] GP29 (HS)   ---> Pin 13 (HSync) VGA DB-15
-  (SD MISO) RX  GP4  [Pin 5] [| 5              16 |] [Pin 16] GP28 (CLK)  ---> (Opcional)
-    (SD CS) CS  GP5  [Pin 6] [| 6              15 |] [Pin 15] GP27 (VS)   ---> Pin 14 (VSync) VGA DB-15
-        (Libre) GP6  [Pin 7] [| 7              14 |] [Pin 14] GP26 (Video)---> Pines 1, 2, 3 (RGB Unidos) VGA
-        (Libre) GP7  [Pin 8] [| 8              13 |] [Pin 13] GP15        ---> (Libre)
- (CVBS Sync)    GP8  [Pin 9] [| 9              12 |] [Pin 12] GP14        ---> (Libre)
- (CVBS Video)   GP9  [Pin 10][| 10             11 |] [Pin 11] GP13 (D- M) ---> Pin 2 (D-) USB Mouse
-                             +--[10][11][12]-----+
-                                  |   |   |
-                                  |   |   +--> GP12 (D+ M): Pin 3 (D+) USB Mouse
-                                  |   +------> GP11 (D- K): Pin 2 (D-) USB Teclado
-                                  +----------> GP10 (D+ K): Pin 3 (D+) USB Teclado
-```
+`text
+                               +-------------------+
+                               |     [ USB-C ]     |
+                               +-------------------+
+  (Alimentación 5V / Bat) 5V [ | (o)           (o) | ] 0   GP0 (Selector VGA / RCA)
+  (Masa / Tierra General)GND [ | (o)           (o) | ] 1   GP1 (Libre)
+  (Alimentación MicroSD) 3V3 [ | (o)  +-----+  (o) | ] 2   GP2 (SD SCK - Reloj)
+  (HSync VGA DB-15 p.13)  29 [ | (o)  | RP  |  (o) | ] 3   GP3 (SD MOSI - Cmd)
+  (Libre / Opcional)      28 [ | (o)  |2040 |  (o) | ] 4   GP4 (SD MISO - Dat0)
+  (VSync VGA DB-15 p.14)  27 [ | (o)  +-----+  (o) | ] 5   GP5 (SD CS - Chip Select)
+  (Video VGA 100Ω p.1,2,3)26 [ | (o)           (o) | ] 6   GP6 (Libre)
+  (Libre)                 15 [ | (o) [BOOT] [RST] (o)| ] 7   GP7 (Libre)
+  (Libre)                 14 [ | (o)           (o) | ] 8   GP8 (CVBS Sync 560Ω -> RCA)
+                               +-------------------+
+                                  13  12  11  10  9
+                                   |   |   |   |  +--> GP9  (CVBS Video 270Ω -> RCA)
+                                   |   |   |   +-----> GP10 (USB Teclado D+)
+                                   |   |   +---------> GP11 (USB Teclado D-)
+                                   |   +-------------> GP12 (USB Mouse D+)
+                                   +-----------------> GP13 (USB Mouse D-)
+`
 
 ---
 
