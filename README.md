@@ -2,6 +2,16 @@
 ### Desarrollo, Adaptación e Ingeniería por [SCHUBIGER.CL](https://schubiger.cl)
 
 <p align="center">
+  <strong>🌐 Idiomas / Languages / Sprachen / 语言 / Langues:</strong><br>
+  <a href="README.md"><strong>🇪🇸 Español</strong></a> |
+  <a href="README_EN.md">🇬🇧 English</a> |
+  <a href="README_PT.md">🇵🇹 Português</a> |
+  <a href="README_DE.md">🇩🇪 Deutsch</a> |
+  <a href="README_ZH.md">🇨🇳 中文</a> |
+  <a href="README_FR.md">🇫🇷 Français</a>
+</p>
+
+<p align="center">
   <img src="assets/pimac_desktop.png" alt="PiMac 2040 Desktop" width="540">
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="assets/rp2040_zero_board.png" alt="Placa RP2040-Zero" width="160">

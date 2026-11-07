@@ -1,6 +1,17 @@
-# PiMac 2040 (Macintosh 208K) — Guía Oficial de Instalación y Hardware
+# PiMac 2040 (Macintosh 208K) – Guía Oficial de Instalación y Hardware
 ### Proyecto de Código y Hardware Abierto por [SCHUBIGER.CL](https://schubiger.cl)
-### Licencia MIT — Libre para Usar, Modificar y Compartir
+### Licencia MIT – Libre para Usar, Modificar y Compartir
+
+<p align="center">
+  <strong>🌐 Idiomas / Languages / Sprachen / 语言 / Langues:</strong><br>
+  <a href="RELEASE_README.md"><strong>🇪🇸 Español</strong></a> |
+  <a href="RELEASE_README_EN.md">🇬🇧 English</a> |
+  <a href="RELEASE_README_PT.md">🇵🇹 Português</a> |
+  <a href="RELEASE_README_DE.md">🇩🇪 Deutsch</a> |
+  <a href="RELEASE_README_ZH.md">🇨🇳 中文</a> |
+  <a href="RELEASE_README_FR.md">🇫🇷 Français</a>
+</p>
+
 
 ¡Bienvenido a **PiMac 2040**! Esta guía está redactada en un lenguaje simple, directo y práctico para que cualquier persona —incluso sin experiencia previa en microcontroladores— pueda instalar el sistema en una placa **RP2040**, armar su circuito en minutos y revivir la experiencia completa de una computadora Apple Macintosh clásica con ratón, teclado, tarjeta MicroSD y salida de video para televisores o monitores.
 
@@ -15,10 +26,10 @@ No necesitas instalar programas complejos ni compilar código fuente. El firmwar
   (Firmware PiMac 2040)       Arrastrar y soltar       (RP2040 en modo Boot)       (Se reinicia en 2 seg)
 ```
 
-1. **Conectar en modo Boot:** Toma tu placa **Waveshare RP2040-Zero** (o Raspberry Pi Pico). Mantén presionado el botón blanco **BOOT** (o BOOTSEL) de la placa y, sin soltarlo, conéctala a tu computadora con el cable USB-C. Luego suelta el botón.
+1. **Conectar en modo Boot:** Toma tu placa **Waveshare / Tenstar Robot RP2040-Zero** (o Raspberry Pi Pico). Mantén presionado el botón blanco **BOOT** (o BOOTSEL) de la placa y, sin soltarlo, conéctala a tu computadora con el cable USB-C. Luego suelta el botón.
 2. **Aparición de la unidad:** En tu computadora aparecerá automáticamente una nueva unidad de disco extraíble llamada **`RPI-RP2`** (exactamente igual a cuando conectas un pendrive USB).
 3. **Copiar el archivo:** Arrastra y suelta dentro de la unidad `RPI-RP2` el archivo:
-   👉 **`PiMac2040_DualVideo_RP2040Zero.uf2`**
+   👉 **`release/PiMac2040_DualVideo_RP2040Zero.uf2`**
 4. **¡Listo!** En 2 segundos la placa parpadeará, la ventana se cerrará sola y el sistema PiMac 2040 quedará instalado permanentemente en la memoria Flash del microcontrolador.
 
 ---
@@ -29,11 +40,11 @@ No necesitas instalar programas complejos ni compilar código fuente. El firmwar
 2. Conéctala a tu PC y formatéala en formato **FAT32** (Formato rápido).
 3. Entra en la carpeta **`disks/`** y elige el disco que quieras usar:
    * **`umac0_oficina_almacenamiento_20mb.img`:** Suite de oficina completa (Microsoft Word 4.0, Excel 2.2, Works 3.0, PageMaker 2.0, MacPaint, MacDraw) con más de 10 MB libres en la carpeta *Mis Documentos* para guardar tus trabajos.
-   * **`umac0_aventura_juegos_15mb.img`:** Aventura y estrategia (Prince of Persia, SimCity 1.11, Tetris oficial, Dark Castle, Stunt Copter, Shufflepuck Café) con espacio para guardar partidas.
-   * **`umac0_master_10mb.img`:** Suite todo-en-uno de acción y arcade.
-4. **Copia el archivo elegido a la raíz de tu MicroSD y renómbralo a:**
+   * **`umac0_aventura_juegos_15mb.img`:** Aventura y estrategia (Prince of Persia, SimCity 1.11, Tetris oficial, Dark Castle, Stunt Copter, Shufflepuck Café) con más de 8 MB libres para tus partidas guardadas.
+   * **`umac0_master_10mb.img`:** Imagen todo-en-uno equilibrada con juegos, dibujo y utilitarios.
+4. **Copia el archivo elegido a la raíz de tu MicroSD** y renómbralo exactamente a:
    👉 **`umac0.img`**
-5. Inserta la tarjeta MicroSD en el adaptador o lector conectado a la placa.
+5. Inserta la tarjeta MicroSD en el lector de tu PiMac 2040.
 
 ---
 
@@ -51,9 +62,9 @@ El firmware de PiMac 2040 incorpora un **motor de video inteligente** que soport
 | Conector de video              | 1 conector RCA hembra           | 1 RCA hembra + 1 VGA DE-15   |
 | Complejidad de armado          | Muy baja (solo 2 resistencias)  | Media (3 resistencias + VGA) |
 | Selección de pantalla          | Automática                      | Con Switch o Jumper (GP0)    |
-| MicroSD (Lectura y Escritura)  | SÍ                              | SÍ                           |
-| Puertos USB (Teclado y Ratón)  | SÍ                              | SÍ                           |
-| Costo total de componentes     | Ultrabajo (~4 a 6 USD)        | Muy económico (~6 a 8 USD) |
+| MicroSD (Lectura y Escritura)  | Sí                              | Sí                           |
+| Puertos USB (Teclado y Ratón)  | Sí                              | Sí                           |
+| Costo total de componentes     | Ultrabajo (~4 a 6 USD)          | Muy económico (~6 a 8 USD)   |
 +--------------------------------+---------------------------------+------------------------------+
 ```
 
@@ -61,7 +72,7 @@ El firmware de PiMac 2040 incorpora un **motor de video inteligente** que soport
 
 ## 📺 VERSIÓN 1: Versión Simple / Económica (Solo Video Compuesto)
 
-![Montaje Real PiMac 2040 - Versión 1 Video Compuesto](assets/pimac2040_version1_composite.jpg)
+[![Montaje Real PiMac 2040 - Versión 1 Video Compuesto](assets/pimac2040_version1_composite.jpg)](assets/pimac2040_version1_composite.jpg)
 *Montaje real de la Versión 1: Conexión de Video Compuesto RCA con divisor resistivo de 560 Ω y 270 Ω, adaptador MicroSD SPI y puertos USB.*
 
 ### ¿Cómo funciona?
@@ -71,94 +82,74 @@ El microcontrolador RP2040 genera de forma nativa la señal de video analógica 
 
 ### Diagrama de Conexión de Video Compuesto:
 ```text
-      Placa RP2040-Zero                             Conector RCA Hembra
-   +---------------------+                        +---------------------+
-   |                     |                        |                     |
-   |   GP8 (Sync)        +-----[ Resistencia ]----+                     |
-   |                     |          560 Ω         |                     |
-   |                     |                        +--> PIN CENTRAL RCA  |
-   |   GP9 (Video)       +-----[ Resistencia ]----+    (Entrada Video TV)
-   |                     |          270 Ω         |                     |
-   |   GND (Tierra)      +---------------------------> MALLA EXTERIOR   |
-   |                     |                             (Tierra / Masa)  |
-   +---------------------+                        +---------------------+
+   RP2040-Zero (Pines)                           Conector RCA Hembra Amarillo
+  +--------------------+                         +---------------------------+
+  |                    |      560 Ω (Verde-Azul-Marrón)                      |
+  |  GP8 (Sync)        +-----[Resistencia 1/4W]----+                         |
+  |                    |                           |                         |
+  |                    |      270 Ω (Rojo-Morado-Marrón)                     |
+  |  GP9 (Video)       +-----[Resistencia 1/4W]----+----> Pin Central (Vivo) |
+  |                    |                                                     |
+  |  GND (Tierra)      +--------------------------------> Malla Exterior/GND |
+  +--------------------+                         +---------------------------+
 ```
 
 ### Lista de Componentes para Comprar (Nombres Técnicos Exactos):
-1. **Placa Microcontroladora:**
-   * Nombre técnico: *Módulo RP2040-Zero (Tenstar Robot / Waveshare o genérico chino)*. Es la placa con RP2040 más compacta y económica del mercado (~18 x 23.5 mm, PCB morada/azul con puerto USB-C y pads almenados dorados).
-2. **Conector de Video:**
-   * Nombre técnico: *Conector RCA hembra para chasis* (color amarillo, con tuerca de fijación) o *Jack RCA hembra para PCB*.
-3. **Resistencias de Video (2 unidades):**
-   * 1x *Resistencia de película metálica de 560 Ω (óhmios) a 1/4W (0.25W), tolerancia 5% o 1%* (Si no encuentras de 560 Ω, sirve de 470 Ω).
-   * 1x *Resistencia de película metálica de 270 Ω (óhmios) a 1/4W (0.25W), tolerancia 5% o 1%* (Si no encuentras de 270 Ω, sirve de 240 Ω).
-4. **Ranura de Tarjeta MicroSD (DIY Directo):**
-   * Opción A (Recomendada y sin costo extra): *Adaptador pasivo plástico de MicroSD a SD* (el adaptador negro que viene incluido gratis en los paquetes de tarjetas MicroSD). Se raspa ligeramente el barniz y se sueldan 6 cables finos directamente a sus pistas doradas traseras, conectándolos a la placa RP2040-Zero sin gastar en módulos adicionales.
-   * Opción B: *Módulo lector MicroSD SPI de 3.3V* comercial.
-5. **Puertos USB para Teclado y Ratón (Dos métodos a elección):**
-   * **Método 1 (Puertos físicos reciclados o sueltos):** 2x *Conectores USB-A hembra* (pueden ser reciclados o desoldados de placas madre/cables viejos, o comprados sueltos tipo DIP/chasis) + 4 resistencias de 27 Ω y 4 resistencias de 15 kΩ conectadas a los pines GP10, GP11, GP12 y GP13.
-   * **Método 2 (Adaptador OTG directo por USB-C):** Puedes conectar un *adaptador USB-C a USB-A OTG* miniatura directamente al puerto USB-C de la placa RP2040-Zero junto con un mini-hub USB pasivo, ahorrándote soldar resistencias USB.
-6. **Opciones de Alimentación Eléctrica:**
-   * **Por cable USB-C:** Conectando a cualquier cargador de celular estándar de 5V (1A o 2A).
-   * **Alimentación directa por pines (Batería o Fuente 5V):** Puedes soldar cables directamente a los pines **5V (Pin 20 - VBUS)** y **GND (Pin 19)** de la RP2040-Zero para alimentar todo el proyecto con una batería de litio 18650 usando un módulo elevador booster TP4056 a 5V.
+1. **1x Microcontrolador:** Placa de desarrollo **Waveshare RP2040-Zero** (o Tenstar Robot RP2040-Zero).
+2. **1x Conector RCA Hembra para Chasis / Panel:** Color amarillo (en inglés: *RCA Female Jack Panel Mount Connector*).
+3. **1x Resistencia de 560 Ω (Ohmios):** Película de carbón o metal, 1/4W o 1/8W, 5% de tolerancia (Bandas: Verde - Azul - Marrón - Dorado).
+4. **1x Resistencia de 270 Ω (Ohmios):** Película de carbón o metal, 1/4W o 1/8W, 5% de tolerancia (Bandas: Rojo - Morado/Violeta - Marrón - Dorado).
+5. **1x Adaptador pasivo MicroSD a SD** (el adaptador plástico que suele venir de regalo con las memorias MicroSD) o 1x Módulo SPI MicroSD de 3.3V.
+6. **1x Adaptador OTG USB-C a USB-A Hembra** (para conectar teclado y ratón).
 
 ---
 
 ## 🖥️ VERSIÓN 2: Versión Completa Dual (Video Compuesto + Monitor VGA)
 
-![Montaje Real PiMac 2040 - Versión 2 Dual VGA y Compuesto](assets/pimac2040_version2_dual_vga_composite.jpg)
-*Montaje real de la Versión 2: Conexión dual completa con conector VGA DE-15 (DB-15), conector RCA, selector de modo y periféricos.*
+[![Montaje Real PiMac 2040 - Versión 2 Dual VGA y Compuesto](assets/pimac2040_version2_dual_vga_composite.jpg)](assets/pimac2040_version2_dual_vga_composite.jpg)
+*Montaje real de la Versión 2: Conexión Dual con puerto VGA DE-15 (resistencia de 100 Ω), conector RCA, selector SPDT de video y MicroSD SPI.*
 
 ### ¿Cómo funciona el Motor Dual Inteligente?
-Esta versión incluye tanto el puerto RCA como un conector VGA estándar de 15 pines. Te permite utilizar el PiMac 2040 en un televisor retro de living o llevarlo a tu escritorio y conectarlo a un monitor de computadora CRT o pantalla LCD/LED con entrada VGA a **640x480 @ 60Hz**.
+El firmware incorpora detección automática del pin **GP0**:
+* **Al encender con GP0 al aire (sin conectar a nada):** El RP2040 arranca en **Modo Video Compuesto**, enviando video NTSC a 15.734 kHz por el conector RCA (ideal para televisores CRT).
+* **Al encender con GP0 conectado a masa (GND):** El RP2040 conmuta al instante a **Modo VGA Estándar**, emitiendo señal 640x480 a 60 Hz (31.468 kHz) por el conector VGA DB-15 (ideal para monitores de computadora).
 
-El firmware lee el estado del pin **GP0** en cada arranque:
-* **Sin Jumper en GP0 (Pin libre al aire / Switch apagado):** El sistema activa la resistencia interna de *pull-up* del RP2040 (3.3V) y genera la señal de **Video Compuesto (TV CRT)** por GP8 y GP9.
-* **Con Jumper en GP0 a GND (Pin conectado a masa / Switch encendido):** El sistema detecta 0V y conmuta automáticamente los generadores PIO para emitir **Video VGA con sincronismos HSync y VSync** por los pines GP26, GP27 y GP29.
+Puedes conectar ambos conectores (RCA y VGA) a la misma placa al mismo tiempo y usar un pequeño interruptor o jumper para alternar entre el monitor de tu escritorio y tu televisor clásico.
 
 ### Diagrama de Conexiones Dual (VGA + Compuesto):
-
 ```text
-       Placa RP2040-Zero                             Conector VGA DE-15 (DB-15) Hembra
-   +-----------------------+                        +---------------------------------+
-   |                       |                        | Pin 1: Red (Rojo)       \       |
-   |   GP26 (Video)        +-----[ Resistencia ]----+ Pin 2: Green (Verde)     + Unidos
-   |                       |       100 Ω a 120 Ω    | Pin 3: Blue (Azul)      /       |
-   |                       |                        |                                 |
-   |   GP27 (VSync)        +----------------------->| Pin 14: Sincronismo Vertical    |
-   |   GP29 (HSync)        +----------------------->| Pin 13: Sincronismo Horizontal  |
-   |   GND (Tierra)        +----------------------->| Pines 5, 6, 7, 8 y 10: Masa GND |
-   |                       |                        +---------------------------------+
-   |                       |
-   |                       |                        Selector de Modo (Jumper o Switch)
-   |   GP0 (Selector)      +----+                   +---------------------------------+
-   |                       |    |                   | [ Abierto / OFF ] = Video RCA   |
-   |   GND                 +----+---[ Switch ]----->| [ Cerrado / ON  ] = Monitor VGA |
-   |                       |                        +---------------------------------+
-   |                       |
-   |                       |                        Conector RCA Hembra (TV Compuesto)
-   |                       |                        +---------------------------------+
-   |   GP8 (Sync)          +-----[ Res. 560 Ω ]-----+                                 |
-   |   GP9 (Video)         +-----[ Res. 270 Ω ]-----+--> PIN CENTRAL RCA (Video TV)   |
-   |   GND (Tierra)        +---------------------------> MALLA EXTERIOR RCA (GND)     |
-   +-----------------------+                        +---------------------------------+
+   RP2040-Zero (Pines)                           Conector VGA Hembra (DE-15 / DB-15)
+  +--------------------+                         +-----------------------------------+
+  |  GP26 (Video)      +-----[ 100 Ω (1/4W) ]----+----> Pines 1, 2 y 3 (Rojo, Verde y Azul unidos)
+  |  GP27 (VSync)      +-------------------------> Pin 14 (Sincronismo Vertical)
+  |  GP29 (HSync)      +-------------------------> Pin 13 (Sincronismo Horizontal)
+  |  GND (Masa)        +-------------------------> Pines 5, 6, 7, 8 y 10 (GNDs de Video)
+  +--------------------+                         +-----------------------------------+
+
+   SELECTOR DE PANTALLA:
+  +--------------------+                         +-----------------------------------+
+  |  GP0               +----> [ Interruptor ] ---> GND (Masa General)
+  |                    |      Abierto: Inicia en Video Compuesto (TV CRT)
+  |                    |      Cerrado: Inicia en VGA (Monitor PC)
+  +--------------------+                         +-----------------------------------+
+
+   VIDEO COMPUESTO RCA (Simultáneo):
+  +--------------------+                         +-----------------------------------+
+  |  GP8 (Sync)        +-----[ 560 Ω (1/4W) ]----+
+  |  GP9 (Video)       +-----[ 270 Ω (1/4W) ]----+----> Pin Central Conector RCA
+  |  GND (Tierra)      +------------------------------> Malla Exterior Conector RCA
+  +--------------------+                         +-----------------------------------+
 ```
 
-> [!NOTE]
-> Al unir los pines 1, 2 y 3 (Rojo, Verde y Azul) del conector VGA, el monitor reproducirá la imagen clásica en blanco y negro puro, idéntica a la pantalla integrada original del Macintosh Plus de 1986.
-
 ### Lista de Componentes Adicionales para Comprar (Versión 2):
-1. **Conector VGA:**
-   * Nombre técnico: *Conector D-Sub DE-15 hembra de 15 pines en 3 filas* (comúnmente vendido como *Conector VGA DB15 hembra para chasis con postes roscados* o *Conector VGA hembra para circuito impreso*).
-2. **Resistencia para VGA:**
-   * 1x *Resistencia de película metálica de 100 Ω o 120 Ω a 1/4W (0.25W), 1% o 5%* (adapta el nivel de voltaje de 3.3V a los 0.7V estándar de video analógico VGA).
-   * (Opcional recomendado) 2x *Resistencias de 100 Ω a 1/4W* colocadas en serie en las líneas GP27 y GP29 para proteger los sincronismos contra sobrecorriente.
-3. **Interruptor o Selector de Modo:**
-   * Nombre técnico: *Interruptor deslizante miniatura SPDT (1 polo, 2 posiciones)* O *Cabezal de pines macho 1x2 (paso 2.54 mm) con Jumper Shunt extraíble*.
+1. **Todo lo de la Versión 1** (RP2040-Zero, conector RCA, resistencias de 560 Ω y 270 Ω, MicroSD y USB).
+2. **1x Conector VGA Hembra para Panel/Chasis:** Conector D-Sub DE-15 hembra de 15 pines en 3 filas (en inglés: *VGA DB15 Female 3-Row D-Sub Connector*).
+3. **1x Resistencia de 100 Ω (Ohmios):** Película de metal o carbón, 1/4W o 1/8W (Bandas: Marrón - Negro - Marrón - Dorado).
+4. **1x Interruptor Deslizante Miniatura SPDT** (de 2 posiciones) o un Jumper de 2 pines (en inglés: *SPDT Mini Slide Switch 3 Pin* o *2.54mm Jumper Cap with Pin Header*).
 
 ---
 
-## 🔌 4. Conexión de la Tarjeta MicroSD (SPI)
+## 💾 4. Conexión de la Tarjeta MicroSD (SPI)
 
 Puedes usar un módulo MicroSD comercial de 3.3V o soldar directamente cables a un **adaptador MicroSD a SD pasivo**:
 
@@ -209,20 +200,21 @@ El PiMac 2040 incluye emulación de controlador **USB Host** por hardware (PIO):
    +-----------------------+                    +-------------------------------------+
 ```
 
-* **Compatibilidad de periféricos:** Funciona con prácticamente cualquier teclado y ratón USB con cable, o teclados/ratones inalámbricos que usen un receptor USB dongle de 2.4 GHz estándar (como los kits de Logitech, Genius, etc.).
+* **Compatibilidad de periféricos:** Funciona con prácticamente cualquier teclado y ratón USB con cable, o teclados/ratones inalámbricos que usen un receptor USB dongle de 2.4 GHz estándar.
+* **Opción USB-C OTG:** También puedes conectar un teclado directamente al puerto USB-C nativo usando un pequeño adaptador OTG USB-C macho a USB-A hembra.
 
 ---
 
-## 💡 6. Diagnóstico con el LED RGB Integrado (GP16)
+## 🚦 6. Diagnóstico con el LED RGB Integrado (GP16)
 
 La placa Waveshare RP2040-Zero incluye un LED RGB integrado (WS2812). El firmware lo utiliza como panel de diagnóstico en tiempo real:
 
 | Color del LED | Comportamiento | Significado |
 | :--- | :--- | :--- |
-| 🟠 **Naranja suave** | Pulso lento | Arrancando el sistema y leyendo la ROM del Mac Plus. |
-| 🟢 **Verde continuo** | Respiración suave | **¡Sistema listo!** El escritorio de Finder está activo y esperando tus órdenes. |
-| 🟡 **Ámbar brillante** | Destellos rápidos | Leyendo bloques de datos desde la tarjeta MicroSD. |
-| 🟣 **Magenta brillante**| Destellos rápidos | **Grabando datos en la MicroSD:** Guardando un archivo, partida o dibujo. |
+| 🟧 **Naranja suave** | Pulso lento | Arrancando el sistema y leyendo la ROM del Mac Plus. |
+| 🟩 **Verde continuo** | Respiración suave | **¡Sistema listo!** El escritorio de Finder está activo y esperando tus órdenes. |
+| 🟨 **Ámbar brillante** | Destellos rápidos | Leyendo bloques de datos desde la tarjeta MicroSD. |
+| 🟪 **Magenta brillante**| Destellos rápidos | **Grabando datos en la MicroSD:** Guardando un archivo, partida o dibujo. |
 | 🔴 **Rojo continuo** | Parpadeo de alarma | Error de MicroSD: revisa el cableado SPI o que la tarjeta esté en FAT32 con el archivo `umac0.img`. |
 
 ---
