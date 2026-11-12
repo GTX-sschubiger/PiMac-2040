@@ -57,21 +57,22 @@ Este proyecto incorpora un **motor de video dual inteligente** (Video Compuesto 
 </p>
 
 ```text
-                            +-------------------+
-                            |     [ USB-C ]     |
-                            | (Host OTG/Flashing|
-   +5V (VBUS / 5V DC Ext) 5V [ | (o)           (o) | ] 0   GP0 (Selector VGA/RCA Switch)
-         GND (Masa General) GND[ | (o)           (o) | ] 1   GP1 (Libre)
-(Pin 4 VDD 3.3V MicroSD) 3V3[ | (o)           (o) | ] 2   GP2 (SD CLK - Reloj)
-    (HSync VGA DB-15 p.13) 29 [ | (o)  RP2040   (o) | ] 3   GP3 (SD TX - MOSI)
-         (CLK Opcional)   28 [ | (o)   -Zero   (o) | ] 4   GP4 (SD RX - MISO)
-    (VSync VGA DB-15 p.14) 27 [ | (o)  +-----+  (o) | ] 5   GP5 (SD CS - Chip Select)
- (Video VGA 100Ω p.1,2,3) 26 [ | (o)           (o) | ] 6   GP6 (Libre)
-                 (Libre)  15 [ | (o) [BOOT] [RST] (o)| ] 7   GP7 (Libre)
-                 (Libre)  14 [ | (o)           (o) | ] 8   GP8 (CVBS Sync 560Ω -> RCA)
-                               +-------------------+
-                                  13  12  11  10  9
-                                   |   |   |   |  +--> GP9  (CVBS Video 270Ω -> RCA)
+                                +---------------------+
+                                |      [ USB-C ]      |
+                                | (Host OTG/Flashing) |
+  +5V (VBUS / 5V DC Ext)     5V[|(o)               (o)|]0   GP0 (Selector VGA/RCA Switch)
+      GND (Masa General)    GND[|(o)               (o)|]1   GP1 (Libre)
+(Pin 4 VDD 3.3V MicroSD)    3V3[|(o)               (o)|]2   GP2 (SD CLK - Reloj)
+  (HSync VGA DB-15 p.13)     29[|(o)    RP2040     (o)|]3   GP3 (SD TX - MOSI)
+          (CLK Opcional)     28[|(o)    -Zero      (o)|]4   GP4 (SD RX - MISO)
+  (VSync VGA DB-15 p.14)     27[|(o)   +------+    (o)|]5   GP5 (SD CS - Chip Select)
+(Video VGA 100Ω p.1,2,3)     26[|(o)               (o)|]6   GP6 (Libre)
+                 (Libre)     15[|(o)  [BOOT][RST]  (o)|]7   GP7 (Libre)
+                 (Libre)     14[|(o)               (o)|]8   GP8 (CVBS Sync 560Ω -> RCA)
+                                | (o) (o) (o) (o) (o) |
+                                +---------------------+
+                                   13 12  11  10   9  
+                                   |   |   |   |   +-> GP9  (CVBS Video 270Ω -> RCA)
                                    |   |   |   +-----> GP10 (USB Teclado D+)
                                    |   |   +---------> GP11 (USB Teclado D-)
                                    |   +-------------> GP12 (USB Mouse D+)
